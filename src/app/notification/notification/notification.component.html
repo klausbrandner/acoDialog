@@ -1,0 +1,33 @@
+<div class="notification"
+    [class.error]="notification.type === 'error'"
+    [class.warning]="notification.type === 'warning'"
+    [class.close]="close">
+    <div class="notification-icon">
+        <svg *ngIf="notification.type === 'success'" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+             <path fill="#FFFFFF" d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M10.75,17.292l-4.5-4.364 l1.857-1.858l2.643,2.506l5.643-5.784l1.857,1.857L10.75,17.292z"/>
+        </svg>
+        <svg *ngIf="notification.type === 'warning'" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+             <path fill="#FFFFFF" d="M12,1L0,23h24L12,1z M11,9h2v7h-2V9z M12,20.25c-0.69,0-1.25-0.561-1.25-1.25s0.56-1.25,1.25-1.25 c0.689,0,1.25,0.561,1.25,1.25S12.689,20.25,12,20.25z"/>
+        </svg>
+        <svg *ngIf="notification.type === 'error'" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+             <path fill="#FFFFFF" d="M16.971,0H7.029L0,7.029v9.941L7.029,24h9.942L24,16.971V7.029L16.971,0z M15.568,16.945l-3.553-3.521 l-3.518,3.568l-1.418-1.418l3.507-3.566L7,8.536l1.418-1.417l3.581,3.458l3.539-3.583l1.431,1.431l-3.535,3.568L17,15.516 L15.568,16.945z"/>
+        </svg>
+    </div>
+    <div class="info">
+        <div class="notification-title">
+            {{notification.title}}
+        </div>
+        <div class="notification-message">
+            {{notification.message}}
+        </div>
+    </div>
+    <div class="close" (click)="closeNotification()">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+             <path opacity="0.8" fill="#FFFFFF" d="M23.954,21.03l-9.185-9.095l9.092-9.174l-2.832-2.807L11.94,9.133L2.764,0.045l-2.81,2.81 L9.14,11.96l-9.095,9.185l2.81,2.811l9.112-9.191l9.18,9.1L23.954,21.03z"/>
+        </svg>
+    </div>
+</div>

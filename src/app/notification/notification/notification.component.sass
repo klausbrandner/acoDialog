@@ -1,0 +1,72 @@
+@keyframes notification-animation
+    0%
+        transform: translate(-200px, 0)
+        opacity: 0
+    50%
+        transform: translate(20px, 0)
+    100%
+        transform: translate(0, 0)
+        opacity: 1
+
+@keyframes notification-close-animation
+    0%
+        transform: translate(0, 0)
+        opacity: 1
+    100%
+        transform: translate(-100%, 0)
+        opacity: 0
+
+.notification
+    position: relative
+    background: linear-gradient(to bottom right, #4A4A4A, #2B2B2B)
+    color: #fff
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+    box-shadow: 4px 4px 25px rgba(0,0,0,0.3)
+    border-radius: 5px
+    animation: notification-animation 0.4s
+    animation-timing-function: ease-out
+
+    .info
+        padding: 13px 20px 13px 0
+
+        .notification-title
+            font-weight: 400
+            font-size: 0.95rem
+            margin: 0 0 2px 0
+
+        .notification-message
+            font-size: 0.8rem
+            color: rgba(255,255,255,0.8)
+
+    .notification-icon
+        display: flex
+        align-items: center
+        padding: 0 15px 0
+
+        svg
+            width: 35px
+            height: 35px
+
+    .close
+        position: absolute
+        top: 0px
+        right: 0px
+        padding: 8px
+        line-height: 10px
+        cursor: pointer
+
+        svg
+            width: 10px
+            height: 10px
+
+    &.error
+        background: linear-gradient(to bottom right, #FF2A68, #FF5E3A)
+
+    &.warning
+        background: linear-gradient(to bottom right, #FF9500, #FFCC00)
+
+    &.close
+        animation: notification-close-animation 0.4s
+        animation-timing-function: ease-out

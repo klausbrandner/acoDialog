@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { NotificationModule } from './notification/notification.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
