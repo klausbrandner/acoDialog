@@ -1,7 +1,7 @@
 <ngdialog-notification></ngdialog-notification>
-<h1>
-  {{title}}
-</h1>
-<div (click)="onShowError()">show error</div>
-<div (click)="onShowWarning()">show warning</div>
-<div (click)="onShowSuccess()">show success</div>
+<ngdialog-dialog></ngdialog-dialog>
+<h1>{{title}}</h1>
+<div class="button" (click)="onShowError()">show error</div>
+<div class="button" (click)="onShowWarning()">show warning</div>
+<div class="button" (click)="onShowSuccess()">show success</div><br /><br />
+<div class="button" (click)="onShowDialog()">show dialog</div>

@@ -1,0 +1,15 @@
+<div class="dialog-container" *ngIf="dialog">
+    <div class="dialog-box">
+        <div class="dialog-title">
+            {{dialog.title}}
+        </div>
+        <div class="dialog-message">
+            {{dialog.message}}
+        </div>
+        <div class="dialog-buttons">
+            <div *ngFor="let button of dialog.buttons" (click)="execute(button)" class="dialog-button">
+                {{button.title}}
+            </div>
+        </div>
+    </div>
+</div>
