@@ -11,6 +11,7 @@ import { Dialog } from '../dialog';
 export class DialogComponent implements OnInit {
 
     dialog: Dialog;
+    show:boolean = false;
 
     constructor(private dialogService: DialogService) { }
 
@@ -18,13 +19,16 @@ export class DialogComponent implements OnInit {
         this.dialogService.dialogs.subscribe(data => {
             if(data.length > 0){
                 this.dialog = data[0];
+                this.show = true;
             }else{
                 this.dialog = null;
+                this.show = false;
             }
         });
     }
 
     execute(button): void {
+        this.show = false;
         this.dialogService.execute(this.dialog, button);
     }
 

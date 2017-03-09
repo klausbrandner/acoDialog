@@ -1,3 +1,12 @@
+@keyframes dialog-animation
+    0%
+        transform: translate(0, 200px)
+    50%
+        transform: translate(0, -20px)
+    100%
+        transform: translate(0, 0)
+
+
 .dialog-container
     position: fixed
     top: 0
@@ -9,30 +18,65 @@
     align-items: center
     background: rgba(0,0,0,0.8)
     z-index: 1000
+    opacity: 0
+    visibility: hidden
+    transition: all 0.4s
+
+    &.show
+        visibility: visible
+        opacity: 1
 
 .dialog-box
-    width: 300px
-    padding: 30px 30px 15px
+    width: 350px
     border-radius: 5px
     background: #fff
+    text-align: center
+    animation: dialog-animation 0.4s
+    animation-timing-function: ease-out
+    box-shadow: 4px 4px 25px rgba(0,0,0,0.25)
 
-    .dialog-title
-        font-size: 1.5rem
-        font-weight: 600
+.dialog-icon
+    margin: 0 0 30px
+    background: #34AADC
+    padding: 20px 0
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+    background: linear-gradient(to bottom right, #34AADC, #1AD6FD)
 
-    .dialog-message
-        margin: 15px 0 20px
+    &.error
+        background: linear-gradient(to bottom right, #FF2A68, #FF5E3A)
+
+    &.warning
+        background: linear-gradient(to bottom right, #FF9500, #FFCC00)
+
+.dialog-title
+    font-size: 1.1rem
+    font-weight: 600
+    padding: 0 30px
+
+.dialog-message
+    margin: 15px 0 10px
+    color: #888
+    font-size: 0.9rem
+    line-height: 150%
+    padding: 0 30px
+
+.dialog-buttons
+    display: flex
+    justify-content: center
+    padding: 0 30px 10px
+
+    .dialog-button
         color: #666
+        padding: 3px 10px
+        margin: 10px
+        cursor: pointer
 
-    .dialog-buttons
-        display: flex
-        justify-content: center
+        &.action
+            color: #34AADC
 
-        .dialog-button
-            background: linear-gradient(to bottom right, #4A4A4A, #2B2B2B)
-            color: #fff
-            border-radius: 5px
-            padding: 7px 20px
-            font-size: 0.9rem
-            margin: 5px
-            cursor: pointer
+            &.error
+                color: #FF2A68
+
+            &.warning
+                color: #FF9500

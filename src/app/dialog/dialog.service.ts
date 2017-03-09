@@ -17,26 +17,29 @@ export class DialogService {
     };
 
     constructor() {
-        this.dataStore = {
-            dialogs: []
-        };
+        this.dataStore = { dialogs: [] };
         this._dialogs = <BehaviorSubject<Dialog[]>>new BehaviorSubject([]);
         this.dialogs = this._dialogs.asObservable();
     }
 
-    push(title: string, message: string, buttons: any[]): void {
-        this.dataStore.dialogs.push(new Dialog(title, message, buttons));
+    info(title:string, message:string, buttons:any[]): void {
+        this.push("info", title, message, buttons);
+    }
+    warning(title:string, message:string, buttons:any[]): void {
+        this.push("warning", title, message, buttons);
+    }
+    error(title:string, message:string, buttons:any[]): void {
+        this.push("error", title, message, buttons);
+    }
+    push(type:string, title:string, message:string, buttons:any[]): void {
+        this.dataStore.dialogs.push(new Dialog(type, title, message, buttons));
         this._dialogs.next(Object.assign({}, this.dataStore).dialogs);
     }
 
     execute(dialog: Dialog, button: any): void {
-        if(button.click){
-            button.click();
-        }
+        if(button.click){ button.click(); }
         let index = this.dataStore.dialogs.indexOf(dialog);
-        if(index > -1){
-            this.dataStore.dialogs.splice(index,1);
-        }
+        if(index > -1){ this.dataStore.dialogs.splice(index,1); }
         this._dialogs.next(Object.assign({}, this.dataStore).dialogs);
     }
 

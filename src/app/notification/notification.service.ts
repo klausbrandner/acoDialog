@@ -39,8 +39,8 @@ export class NotificationService {
     warning(title:string, message:string): void{
         this.push('warning', title, message);
     }
-    success(title:string, message:string): void{
-        this.push('success', title, message);
+    info(title:string, message:string): void{
+        this.push('info', title, message);
     }
     push(type:string, title:string, message:string){
         if(this.dataStore.notifications.length >= this.maxNotifications){
