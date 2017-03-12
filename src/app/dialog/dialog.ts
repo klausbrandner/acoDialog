@@ -1,11 +1,13 @@
+import { Button } from './button';
+
 export class Dialog{
 
     type: string;
     title: string;
     message: string;
-    buttons: any[];
+    buttons: Button[];
 
-    constructor(type:string, title:string, message:string, buttons: any[]){
+    constructor(type:string, title:string, message:string, buttons: Button[]){
         this.type = type;
         this.title = title;
         this.message = message;

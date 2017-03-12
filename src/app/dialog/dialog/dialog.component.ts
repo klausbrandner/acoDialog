@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DialogService } from '../dialog.service';
 import { Dialog } from '../dialog';
+import { Button } from '../button';
 
 @Component({
   selector: 'ngdialog-dialog',
@@ -27,7 +28,7 @@ export class DialogComponent implements OnInit {
         });
     }
 
-    execute(button): void {
+    execute(button:Button): void {
         this.show = false;
         this.dialogService.execute(this.dialog, button);
     }
