@@ -19,4 +19,4 @@ import { DialogComponent } from './dialog/dialog.component';
         DialogComponent
     ]
 })
-export class DialogModule { }
+export class AcoDialogModule { }

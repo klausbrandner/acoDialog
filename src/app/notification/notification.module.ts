@@ -21,4 +21,4 @@ import { NotificationComponent } from './notification/notification.component';
         NotificationListComponent
     ]
 })
-export class NotificationModule { }
+export class AcoNotificationModule { }

@@ -4,7 +4,7 @@ import { Notification } from '../notification';
 import { NotificationService } from '../notification.service';
 
 @Component({
-  selector: 'app-notification',
+  selector: 'aco-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.sass']
 })

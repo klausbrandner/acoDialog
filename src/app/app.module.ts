@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { DialogModule } from './dialog/dialog.module';
-import { NotificationModule } from './notification/notification.module';
+import { AcoDialogModule } from './dialog/dialog.module';
+import { AcoNotificationModule } from './notification/notification.module';
 
 import { AppComponent } from './app.component';
 
@@ -16,8 +16,8 @@ import { AppComponent } from './app.component';
         BrowserModule,
         FormsModule,
         HttpModule,
-        DialogModule,
-        NotificationModule
+        AcoDialogModule,
+        AcoNotificationModule
     ],
     providers: [],
     bootstrap: [AppComponent]

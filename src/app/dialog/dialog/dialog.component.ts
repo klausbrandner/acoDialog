@@ -5,7 +5,7 @@ import { Dialog } from '../dialog';
 import { Button } from '../button';
 
 @Component({
-  selector: 'ngdialog-dialog',
+  selector: 'aco-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.sass']
 })

@@ -9,7 +9,8 @@ import { NotificationService } from './notification/notification.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-    title = 'ngdialog';
+    
+    title = 'acoDialog';
 
     constructor(private dialogService: DialogService,
         private notificationService: NotificationService) {}

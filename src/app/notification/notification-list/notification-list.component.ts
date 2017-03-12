@@ -6,7 +6,7 @@ import { NotificationService } from '../notification.service';
 import { Notification } from '../notification';
 
 @Component({
-  selector: 'ngdialog-notification',
+  selector: 'aco-notifications',
   templateUrl: './notification-list.component.html',
   styleUrls: ['./notification-list.component.sass']
 })
